@@ -95,7 +95,7 @@
                 <div class="col-md-8">
                     <div class="contact-form">
                         <div id="success"></div>
-                        <form th:method="POST" th:action="@{/barbershop/index}" th:object="${report}">
+                        <form th:method="POST" th:action="@{/barbershop/report}" th:object="${reportForm}">
                             <div class="control-group">
                                 <input type="text" th:field="*{name}" class="form-control" placeholder="Имя"/>
                                 <div style="color: red" th:if="${#fields.hasErrors('name')}" th:errors="*{name}">Name error</div>
@@ -153,10 +153,11 @@
                     <p>
                         Введите свой email для подписки на наши новости.
                     </p>
-                    <div class="form">
-                        <input class="form-control" placeholder="Ваш email">
-                        <button class="btn">Подтвердить</button>
-                    </div>
+                    <form class="form" th:method="POST" th:action="@{/barbershop/news}" th:object="${emailForm}">
+                        <input class="form-control"type="email" th:field="*{email}" placeholder="Ваш email"/>
+                        <div style="color: red" th:if="${#fields.hasErrors('email')}" th:errors="*{email}">Email error</div>
+                        <button class="btn" type="submit">Отправить</button>
+                    </form>
                 </div>
             </div>
         </div>

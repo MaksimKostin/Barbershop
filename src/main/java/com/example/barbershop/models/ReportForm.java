@@ -4,13 +4,15 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.Table;
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.Size;
 import java.math.BigInteger;
 
 @Entity
-public class Report {
+@Table(name = "Reports")
+public class ReportForm {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private BigInteger id;
@@ -26,6 +28,10 @@ public class Report {
     @NotEmpty(message = "Заполните поле с сообщением")
     @Size(min = 2, message = "Сообщение должно быть больше 2 символов")
     private String message;
+
+    public BigInteger getId() {
+        return id;
+    }
 
     public String getName() {
         return name;
