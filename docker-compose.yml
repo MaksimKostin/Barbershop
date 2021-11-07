@@ -1,0 +1,19 @@
+version: '3.1'
+services:
+  app:
+    container_name: barbershop-app
+    image: barbershop-app
+    build: ./
+    ports:
+      - "8080:8080"
+    depends_on:
+      - postgresqldb
+  postgresqldb:
+    container_name: postgres-db
+    image: postgres
+    ports:
+      - "80:80"
+    environment:
+      - POSTGRES_PASSWORD=Maksim123
+      - POSTGRES_USER=postgres
+      - POSTGRES_DB=barbershop
