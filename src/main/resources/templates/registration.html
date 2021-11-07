@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="https://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8" />
+    <title>Barber Shop</title>
+
+    <!-- Favicon -->
+    <link href="/img/barber.ico" rel="icon">
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- CSS Libraries -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+
+    <!-- Template Stylesheet -->
+    <link href = "/css/style.css" rel = "stylesheet"/>
+</head>
+<body>
+    <!-- Contact Start -->
+    <div class="contact">
+        <div class="container-fluid">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-md-4"></div>
+                    <div class="col-md-8">
+                        <div class="contact-form">
+                            <div id="success"></div>
+                            <form th:method="POST" th:action="@{/registration}">
+                                <div class="control-group">
+                                    Регистрация
+                                </div>
+                                <div class="control-group">
+                                    <label> Имя пользователя : <input type="text" class="form-control" name="username"/> </label>
+                                </div>
+                                <div th:if="${param.error}" class="control-group" style="color: red">
+                                    Пользователь с таким логином уже существует.
+                                </div>
+                                <div>
+                                    <label> Пароль: <input type="password" class="form-control" name="password"/> </label>
+                                </div>
+                                <div>
+                                    <button class="btn" type="submit">Зарегистрироватьcя</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Contact End -->
+</body>
+</html>

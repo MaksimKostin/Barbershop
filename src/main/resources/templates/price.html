@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8" />
+    <title>Barber Shop</title>
+
+    <!-- Favicon -->
+    <link href="/img/barber.ico" rel="icon">
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- CSS Libraries -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+
+    <!-- Template Stylesheet -->
+    <link href = "/css/style.css" rel = "stylesheet"/>
+</head>
+
+<body>
+<!-- Top Bar Start -->
+<div class="top-bar d-none d-md-block">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-6">
+                <div class="top-bar-left">
+                    <div class="text">
+                        <h2>+7 926 345 34 42</h2>
+                        <p>Позвоните нам для записи на прием</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="top-bar-right">
+                    <div class="social">
+                        <a href=""><i class="fab fa-twitter"></i></a>
+                        <a href=""><i class="fab fa-facebook-f"></i></a>
+                        <a href=""><i class="fab fa-linkedin-in"></i></a>
+                        <a href=""><i class="fab fa-instagram"></i></a>
+                    </div>
+                    <form th:action="@{/logout}" method="post">
+                        <input type="submit" value="Sign Out"/>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Top Bar End -->
+
+<!-- Nav Bar Start -->
+<div class="navbar navbar-expand-lg bg-dark navbar-dark">
+    <div class="container-fluid">
+        <a th:href="@{/index}" class="navbar-brand">Barber Shop</a>
+
+        <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
+            <div class="navbar-nav ml-auto">
+                <a th:href="@{/index}" class="nav-item nav-link active">Главная</a>
+                <a th:href="@{/about}" class="nav-item nav-link">О нас</a>
+                <a th:href="@{/service}" class="nav-item nav-link">Сервис</a>
+                <a th:href="@{/price}" class="nav-item nav-link">Прайс</a>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Nav Bar End -->
+
+
+<!-- Page Header Start -->
+<div class="page-header">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <h1>Прайс лист</h1>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Page Header End -->
+
+    <!-- Pricing Start -->
+    <div class="price">
+        <div class="container">
+            <div class="section-header text-center">
+                <h2>У нас лучшие цены в городе!</h2>
+            </div>
+            <div class="row">
+                <div class="col-lg-3 col-md-4 col-sm-6">
+                    <div class="price-item">
+                        <div class="price-img">
+                            <img src="/img/price-1.jpg" alt="Image">
+                        </div>
+                        <div class="price-text">
+                            <h2>Simple стрижка</h2>
+                            <h3>1000 р.</h3>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-4 col-sm-6">
+                    <div class="price-item">
+                        <div class="price-img">
+                            <img src="/img/price-2.jpg" alt="Image">
+                        </div>
+                        <div class="price-text">
+                            <h2>Мытье головы</h2>
+                            <h3>500 р.</h3>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-4 col-sm-6">
+                    <div class="price-item">
+                        <div class="price-img">
+                            <img src="/img/price-3.jpg" alt="Image">
+                        </div>
+                        <div class="price-text">
+                            <h2>Окрашивание</h2>
+                            <h3>5000 р.</h3>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-4 col-sm-6">
+                    <div class="price-item">
+                        <div class="price-img">
+                            <img src="/img/price-4.jpg" alt="Image">
+                        </div>
+                        <div class="price-text">
+                            <h2>Blade стрижка</h2>
+                            <h3>1500 р.</h3>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-4 col-sm-6">
+                    <div class="price-item">
+                        <div class="price-img">
+                            <img src="/img/price-5.jpg" alt="Image">
+                        </div>
+                        <div class="price-text">
+                            <h2>Укладка с лаком</h2>
+                            <h3>300 р.</h3>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-4 col-sm-6">
+                    <div class="price-item">
+                        <div class="price-img">
+                            <img src="/img/price-6.jpg" alt="Image">
+                        </div>
+                        <div class="price-text">
+                            <h2>Укладка с мусом</h2>
+                            <h3>400 р.</h3>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-4 col-sm-6">
+                    <div class="price-item">
+                        <div class="price-img">
+                            <img src="/img/price-7.jpg" alt="Image">
+                        </div>
+                        <div class="price-text">
+                            <h2>Мытье бороды</h2>
+                            <h3>500 р.</h3>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-4 col-sm-6">
+                    <div class="price-item">
+                        <div class="price-img">
+                            <img src="/img/price-8.jpg" alt="Image">
+                        </div>
+                        <div class="price-text">
+                            <h2>Подровнять</h2>
+                            <h3>900 р.</h3>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-4 col-sm-6">
+                    <div class="price-item">
+                        <div class="price-img">
+                            <img src="/img/price-9.jpg" alt="Image">
+                        </div>
+                        <div class="price-text">
+                            <h2>Стрижка бороды</h2>
+                            <h3>1200 р.</h3>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-4 col-sm-6">
+                    <div class="price-item">
+                        <div class="price-img">
+                            <img src="/img/price-10.jpg" alt="Image">
+                        </div>
+                        <div class="price-text">
+                            <h2>Unique стрижка</h2>
+                            <h3>2000 р.</h3>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-4 col-sm-6">
+                    <div class="price-item">
+                        <div class="price-img">
+                            <img src="/img/price-11.jpg" alt="Image">
+                        </div>
+                        <div class="price-text">
+                            <h2>Мастер-класс</h2>
+                            <h3>4000 р.</h3>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-4 col-sm-6">
+                    <div class="price-item">
+                        <div class="price-img">
+                            <img src="/img/price-12.jpg" alt="Image">
+                        </div>
+                        <div class="price-text">
+                            <h2>Массаж головы</h2>
+                            <h3>1700 р.</h3>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Pricing End -->
+
+
+    <!-- Footer Start -->
+    <div class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-7">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="footer-contact">
+                                <h2>Реквезиты нашего салона</h2>
+                                <p><i class="fa fa-map-marker-alt"></i>ул. Маросейка, 4/2, стр. 1, Москва.</p>
+                                <p><i class="fa fa-phone-alt"></i>+7 926 345 34 42</p>
+                                <p><i class="fa fa-envelope"></i>info@barbershop.ru</p>
+                                <div class="footer-social">
+                                    <a href=""><i class="fab fa-twitter"></i></a>
+                                    <a href=""><i class="fab fa-facebook-f"></i></a>
+                                    <a href=""><i class="fab fa-youtube"></i></a>
+                                    <a href=""><i class="fab fa-instagram"></i></a>
+                                    <a href=""><i class="fab fa-linkedin-in"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-5">
+                    <div class="footer-newsletter">
+                        <h2>Новости</h2>
+                        <p>
+                            Введите свой email для подписки на наши новости.
+                        </p>
+                        <form class="form" th:method="POST" th:action="@{/price}" th:object="${emailForm}">
+                            <input class="form-control"type="email" th:field="*{email}" placeholder="Ваш email"/>
+                            <div style="color: red" th:if="${#fields.hasErrors('email')}" th:errors="*{email}">Email error</div>
+                            <button class="btn" type="submit">Отправить</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Footer End -->
+</body>
+</html>
