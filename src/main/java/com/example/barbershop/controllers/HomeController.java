@@ -9,12 +9,10 @@ import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
 
 import javax.validation.Valid;
 
 @Controller
-@RequestMapping("/barbershop")
 public class HomeController {
 
     private final ReportRepository reportRepository;
@@ -42,7 +40,7 @@ public class HomeController {
             return "index";
 
         reportRepository.save(reportForm);
-        return "redirect:/barbershop/index";
+        return "redirect:/index";
     }
 
     // Подписка на рассылку для главной страницы
@@ -55,7 +53,7 @@ public class HomeController {
             return "index";
 
         emailRepository.saveEmail(emailForm.getEmail());
-        return "redirect:/barbershop/index";
+        return "redirect:/index";
     }
 
 }
