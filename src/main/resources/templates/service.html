@@ -39,6 +39,9 @@
                         <a href=""><i class="fab fa-linkedin-in"></i></a>
                         <a href=""><i class="fab fa-instagram"></i></a>
                     </div>
+                    <form th:action="@{/logout}" method="post">
+                        <input type="submit" value="Sign Out"/>
+                    </form>
                 </div>
             </div>
         </div>
@@ -49,14 +52,14 @@
 <!-- Nav Bar Start -->
 <div class="navbar navbar-expand-lg bg-dark navbar-dark">
     <div class="container-fluid">
-        <a th:href="@{/barbershop/index}" class="navbar-brand">Barber Shop</a>
+        <a th:href="@{/index}" class="navbar-brand">Barber Shop</a>
 
         <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
             <div class="navbar-nav ml-auto">
-                <a th:href="@{/barbershop/index}" class="nav-item nav-link active">Главная</a>
-                <a th:href="@{/barbershop/about}" class="nav-item nav-link">О нас</a>
-                <a th:href="@{/barbershop/service}" class="nav-item nav-link">Сервис</a>
-                <a th:href="@{/barbershop/price}" class="nav-item nav-link">Прайс</a>
+                <a th:href="@{/index}" class="nav-item nav-link active">Главная</a>
+                <a th:href="@{/about}" class="nav-item nav-link">О нас</a>
+                <a th:href="@{/service}" class="nav-item nav-link">Сервис</a>
+                <a th:href="@{/price}" class="nav-item nav-link">Прайс</a>
             </div>
         </div>
     </div>
@@ -143,7 +146,7 @@
                     <p>
                         Введите свой email для подписки на наши новости.
                    </p>
-                    <form class="form" th:method="POST" th:action="@{/barbershop/service}" th:object="${emailForm}">
+                    <form class="form" th:method="POST" th:action="@{/service}" th:object="${emailForm}">
                         <input class="form-control"type="email" th:field="*{email}" placeholder="Ваш email"/>
                         <div style="color: red" th:if="${#fields.hasErrors('email')}" th:errors="*{email}">Email error</div>
                         <button class="btn" type="submit">Отправить</button>
